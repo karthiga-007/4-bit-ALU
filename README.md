@@ -16,6 +16,18 @@ The ALU performs multiple arithmetic and logical operations based on the control
 - Analyze output behavior for different control signals
 
 ---
+## ALU Operations
+
+The 4-bit ALU performs arithmetic and logical operations based on the selected control signal.
+
+| Operation | Description |
+|-----------|-------------|
+| ADD | Adds two 4-bit inputs |
+| SUB | Subtracts the second input from the first |
+| AND | Performs bitwise AND |
+| OR | Performs bitwise OR |
+| XOR | Performs bitwise XOR |
+| NOT | Performs bitwise NOT |
 
 
 
