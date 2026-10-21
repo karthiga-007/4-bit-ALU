@@ -1,82 +1,70 @@
-# 4-Bit Arithmetic Logic Unit (ALU) Design using Vivado
+# 4-Bit Arithmetic Logic Unit (ALU) Design Using Vivado
 
 ## Overview
 
-This project implements a 4-bit Arithmetic Logic Unit (ALU) using Verilog HDL and simulates its functionality using Xilinx Vivado.
+This project implements a 4-bit Arithmetic Logic Unit (ALU) using Verilog HDL and verifies its functionality through simulation in Xilinx Vivado.
 
-The ALU performs multiple arithmetic and logical operations based on the control input (opcode). It serves as a fundamental component of processors, microcontrollers, and digital systems.
-
----
+The ALU performs arithmetic and bitwise logical operations based on a control signal (`SEL`). It demonstrates fundamental digital design concepts used in processors, microcontrollers, and FPGA-based systems.
 
 ## Objectives
 
-- Design a 4-bit ALU using Verilog HDL
-- Implement arithmetic and logical operations
-- Verify functionality through simulation
-- Analyze output behavior for different control signals
+- Design a 4-bit ALU using Verilog HDL.
+- Implement arithmetic and bitwise logical operations.
+- Develop a testbench to verify the ALU functionality.
+- Simulate the design using Xilinx Vivado.
+- Analyze output waveforms for different input combinations and control signals.
 
----
 ## ALU Operations
 
-The 4-bit ALU performs arithmetic and logical operations based on the selected control signal.
+The ALU selects an operation based on the `SEL` control input.
 
-| Operation | Description |
-|-----------|-------------|
-| ADD | Adds two 4-bit inputs |
-| SUB | Subtracts the second input from the first |
-| AND | Performs bitwise AND |
-| OR | Performs bitwise OR |
-| XOR | Performs bitwise XOR |
-| NOT | Performs bitwise NOT |
+| SEL | Operation | Description |
+|---|---|---|
+| `000` | ADD | Adds inputs A and B |
+| `001` | SUB | Subtracts B from A |
+| `010` | AND | Performs bitwise AND |
+| `011` | OR | Performs bitwise OR |
+| `100` | XOR | Performs bitwise XOR |
+| `101` | NOT | Performs bitwise NOT |
 
-
+*Note: The opcode assignments should be verified against the Verilog source code. The NOT operation is assumed to operate on input A.*
 
 ## Design Flow
 
-1. Created ALU module in Verilog HDL.
+1. Created the ALU module using Verilog HDL.
 2. Defined arithmetic and logical operations using control signals.
-3. Developed a testbench to verify functionality.
-4. Simulated the design in Vivado.
-5. Analyzed waveforms and validated outputs.
-
----
+3. Developed a testbench with different input combinations.
+4. Simulated the design in Xilinx Vivado.
+5. Analyzed the simulation waveforms and checked the output values.
 
 ## Simulation Results
 
-The simulation confirms correct execution of all supported ALU operations.
-
-Example:
+The following table shows example results for inputs `A = 0101` and `B = 0011`.
 
 | A | B | SEL | Operation | Result |
-|---|---|-----|-----------|--------|
-| 0101 | 0011 | 000 | Addition | 1000 |
-| 0101 | 0011 | 001 | Subtraction | 0010 |
-| 0101 | 0011 | 010 | AND | 0001 |
-| 0101 | 0011 | 011 | OR | 0111 |
+|---|---|---|---|---|
+| `0101` | `0011` | `000` | Addition | `1000` |
+| `0101` | `0011` | `001` | Subtraction | `0010` |
+| `0101` | `0011` | `010` | AND | `0001` |
+| `0101` | `0011` | `011` | OR | `0111` |
 
----
-
-
+These examples illustrate the expected outputs for the listed operations. The complete operation set should be verified using the project's testbench.
 
 ## Applications
 
 - Digital Signal Processing
 - Embedded Systems
-- Microprocessors
+- Microprocessors and Microcontrollers
 - FPGA-Based Designs
 - Computer Architecture
 
----
-
 ## Future Improvements
 
-- 8-bit and 16-bit ALU implementation
-- Overflow and Zero flag generation
-- FPGA hardware implementation
-- Integration with a simple processor design
-
----
+- Extend the design to 8-bit and 16-bit ALUs.
+- Add carry, overflow, and zero flag generation.
+- Implement the design on FPGA hardware.
+- Integrate the ALU into a simple processor design.
 
 ## Conclusion
 
-A 4-bit ALU was successfully designed and simulated using Verilog HDL in Xilinx Vivado. The implementation demonstrates fundamental arithmetic and logical operations and provides a foundation for understanding processor datapath design and digital system development.
+This project demonstrates the design and simulation of a 4-bit ALU using Verilog HDL and Xilinx Vivado. It provides a foundation for understanding arithmetic operations, bitwise logic, control signals, and processor datapath design.
